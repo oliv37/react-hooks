@@ -8,7 +8,9 @@ import blue from '@material-ui/core/colors/blue';
 import orange from '@material-ui/core/colors/orange';
 import red from '@material-ui/core/colors/red';
 import TabContainer from "./TabContainer";
-import UseStateExample from "./examples/UseStateExample";
+import TwoColumnsTabContainer from "./TwoColumnsTabContainer";
+import WithUseStateExample from "./useState/WithUseStateExample";
+import WithoutUseStateExample from './useState/WithoutUseStateExample';
 import './App.css';
 
 const theme = createMuiTheme({
@@ -35,7 +37,12 @@ function App({classes}) {
             <Tab label="USE EFFECT" />
           </Tabs>
         </AppBar>
-        {value === 0 && <TabContainer><UseStateExample/></TabContainer>}
+        {value === 0 && (
+          <TwoColumnsTabContainer
+            leftComponent={WithoutUseStateExample}
+            rightComponent={WithUseStateExample}
+          />
+        )}
         {value === 1 && <TabContainer>UseEffect</TabContainer>}
       </div>
     </MuiThemeProvider>
