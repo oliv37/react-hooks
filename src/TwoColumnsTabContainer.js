@@ -5,7 +5,7 @@ import Typography from '@material-ui/core/Typography';
 
 const styles = theme => {
     const commonStyles = {
-        padding: theme.spacing.unit * 4,
+        padding: theme.spacing(4),
         display: "flex",
         flexDirection: "column",
         alignItems: "flex-start"

@@ -28,7 +28,7 @@ function useWindowWidth() {
         return function() {
             window.removeEventListener('resize', handleResize);
         }
-    });
+    }, []);
 
     return width;
 }
@@ -48,7 +48,7 @@ function WithCustomHooksExample() {
                 {...firstName}
                 margin="normal"
             />
-            <Typography component="p" variant="display1" style={{margin: "15px 0"}}>
+            <Typography component="p" variant="body1" style={{margin: "15px 0"}}>
                 {`${width} px`}
             </Typography>
         </>

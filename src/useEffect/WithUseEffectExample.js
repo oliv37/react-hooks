@@ -11,7 +11,7 @@ function WithUseEffectExample() {
 
     useEffect(function() {
         document.title = `Hello ${name}`;
-    });
+    }, [name]);
 
     const [width, setWidth] = useState(window.innerWidth);
     useEffect(function() {
@@ -24,7 +24,7 @@ function WithUseEffectExample() {
         return function() {
             window.removeEventListener('resize', handleResize)
         };
-    });
+    }, []);
     
     return (
         <>
@@ -33,7 +33,7 @@ function WithUseEffectExample() {
                 onChange={handleChangeName}
                 margin="normal"
             />
-            <Typography component="p" variant="display1" style={{margin: "15px 0"}}>
+            <Typography component="p" variant="body1" style={{margin: "15px 0"}}>
                 {`${width} px`}
             </Typography>
         </>

@@ -15,6 +15,8 @@ import WithoutUseEffectExample from './useEffect/WithoutUseEffectExample';
 import WithUseEffectExample from './useEffect/WithUseEffectExample';
 import WithCustomHooksExample from './customHooks/WithCustomHooksExample';
 import './App.css';
+import WithoutUseEffect2Example from './useEffectUser/withClass/WithoutUseEffect2Example';
+import WithUseEffect2Example from './useEffectUser/withHooks/WithUseEffect2Example';
 
 const theme = createMuiTheme({
   palette: {
@@ -38,6 +40,7 @@ function App() {
           <Tabs value={value} onChange={handleChange}>
             <Tab label="USE STATE" />
             <Tab label="USE EFFECT" />
+            <Tab label="USE EFFECT (User)" />
             <Tab label="CUSTOM HOOKS" />
           </Tabs>
         </AppBar>
@@ -47,13 +50,19 @@ function App() {
             rightComponent={WithUseStateExample}
           />
         )}
-        {value === 1&& (
+        {value === 1 && (
           <TwoColumnsTabContainer
             leftComponent={WithoutUseEffectExample}
             rightComponent={WithUseEffectExample}
           />
         )}
         {value === 2 && (
+          <TwoColumnsTabContainer
+            leftComponent={WithoutUseEffect2Example}
+            rightComponent={WithUseEffect2Example}
+          />
+        )}
+        {value === 3 && (
           <TabContainer>
             <WithCustomHooksExample/>
           </TabContainer>
