@@ -26,16 +26,18 @@ function TwoColumnsTabContainer({leftComponent: C1, rightComponent: C2, classes}
         <Grid container>
             <Grid item xs={6} className={classes.left}>
                 <Typography component="h1" variant="h5">
-                    With Class
+                    Using Class
                 </Typography>
                 <C1/>
             </Grid>
-            <Grid item xs={6} className={classes.right}>
-                <Typography component="h1" variant="h5">
-                    With Hooks
-                </Typography>
-                <C2/>
-            </Grid>
+            {C2 && (
+                <Grid item xs={6} className={classes.right}>
+                    <Typography component="h1" variant="h5">
+                        Using Hooks
+                    </Typography>
+                    <C2/>
+                </Grid>
+            )}
         </Grid>
     );
 }

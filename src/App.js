@@ -7,10 +7,13 @@ import {createMuiTheme} from "@material-ui/core";
 import blue from '@material-ui/core/colors/blue';
 import orange from '@material-ui/core/colors/orange';
 import red from '@material-ui/core/colors/red';
-import TabContainer from "./TabContainer";
 import TwoColumnsTabContainer from "./TwoColumnsTabContainer";
+import TabContainer from "./TabContainer";
 import WithUseStateExample from "./useState/WithUseStateExample";
 import WithoutUseStateExample from './useState/WithoutUseStateExample';
+import WithoutUseEffectExample from './useEffect/WithoutUseEffectExample';
+import WithUseEffectExample from './useEffect/WithUseEffectExample';
+import WithCustomHooksExample from './customHooks/WithCustomHooksExample';
 import './App.css';
 
 const theme = createMuiTheme({
@@ -21,8 +24,8 @@ const theme = createMuiTheme({
   }
 });
 
-function App({classes}) {
-  const [value, setValue] = useState(0);
+function App() {
+  const [value, setValue] = useState(2);
 
   function handleChange(event, value) {
     setValue(value);
@@ -35,6 +38,7 @@ function App({classes}) {
           <Tabs value={value} onChange={handleChange}>
             <Tab label="USE STATE" />
             <Tab label="USE EFFECT" />
+            <Tab label="CUSTOM HOOKS" />
           </Tabs>
         </AppBar>
         {value === 0 && (
@@ -43,7 +47,17 @@ function App({classes}) {
             rightComponent={WithUseStateExample}
           />
         )}
-        {value === 1 && <TabContainer>UseEffect</TabContainer>}
+        {value === 1&& (
+          <TwoColumnsTabContainer
+            leftComponent={WithoutUseEffectExample}
+            rightComponent={WithUseEffectExample}
+          />
+        )}
+        {value === 2 && (
+          <TabContainer>
+            <WithCustomHooksExample/>
+          </TabContainer>
+        )}
       </div>
     </MuiThemeProvider>
   );

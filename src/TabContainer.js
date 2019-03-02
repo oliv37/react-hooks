@@ -1,12 +1,21 @@
 import React from "react";
-import Typography from '@material-ui/core/Typography';
+import { withStyles } from '@material-ui/core/styles';
 
-function TabContainer(props) {
+const styles = theme => ({
+    root: {
+        padding: theme.spacing.unit * 4,
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "flex-start"
+    }
+});
+
+function TabContainer({classes, children}) {
     return (
-        <Typography component="div" style={{ padding: 24 }}>
-            {props.children}
-        </Typography>
+        <div className={classes.root}>
+            {children}
+        </div>
     );
 }
 
-export default TabContainer;
+export default withStyles(styles)(TabContainer);
