@@ -27,7 +27,7 @@ const theme = createMuiTheme({
 });
 
 function App() {
-  const [value, setValue] = useState(2);
+  const [value, setValue] = useState(0);
 
   function handleChange(event, value) {
     setValue(value);

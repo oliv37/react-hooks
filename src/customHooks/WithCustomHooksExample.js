@@ -2,22 +2,20 @@ import React, {useState, useEffect} from "react";
 import TextField from '@material-ui/core/TextField';
 import Typography from '@material-ui/core/Typography';
 
-function useTextField(initialValue) {
-    const [value, setValue] = useState(initialValue);
+// TODO : créer custom hooks
 
-    function handleChange(e) {
-        setValue(e.target.value);
+function WithCustomHooksExample() {
+    const [firstName, setFirstName] = useState("john");
+    function handleChangeFirstName(e) {
+        setFirstName(e.target.value);
     }
 
-    return {
-        value,
-        onChange: handleChange
-    };
-}
+    const [lastName, setLastName] = useState("doe");
+    function handleChangeLastName(e) {
+        setLastName(e.target.value);
+    }
 
-function useWindowWidth() {
     const [width, setWidth] = useState(window.innerWidth);
-
     useEffect(function() {
         function handleResize() {
             setWidth(window.innerWidth);
@@ -30,22 +28,16 @@ function useWindowWidth() {
         }
     }, []);
 
-    return width;
-}
-
-function WithCustomHooksExample() {
-    const firstName = useTextField("john");
-    const lastName = useTextField("doe");
-    const width = useWindowWidth();
-
     return (
         <>
             <TextField
-                {...lastName}
+                value={lastName}
+                onChange={handleChangeLastName}
                 margin="normal"
             />
             <TextField
-                {...firstName}
+                value={firstName}
+                onChange={handleChangeFirstName}
                 margin="normal"
             />
             <Typography component="p" variant="body1" style={{margin: "15px 0"}}>
