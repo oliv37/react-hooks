@@ -16,21 +16,7 @@ const styles = {
 };
 
 function UserInfoWithHooks({userId, classes}) {
-    const [user, setUser] = useState(undefined);
-
-    useEffect(() => {
-        setUser(undefined);
-
-        const request = findUserById(userId);
-
-        request.promise
-            .then(user => setUser(user))
-            .catch(() => {});
-
-        return function() {
-            request.cancel();
-        };
-    }, [userId]);
+    const [user, setUser] = useState({});
     
     if (!user) {
         return <CircularProgress/>;
