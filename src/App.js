@@ -69,8 +69,8 @@ function App() {
             <WithCustomHooksExample/>
           </TabContainer>
         )}
+        <ToastContainer autoClose={2000}/>
       </div>
-      <ToastContainer/>
     </MuiThemeProvider>
   );
 }
