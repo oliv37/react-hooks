@@ -2,7 +2,7 @@ import React, {useState, useEffect} from "react";
 import { toast } from 'react-toastify';
 import TextField from '@material-ui/core/TextField';
 import Typography from '@material-ui/core/Typography';
-//toast.success(""); toas.info("");
+//toast.success(""); toast.info("");
 
 function WithUseEffectExample() {
     const [name, setName] = useState("john");
