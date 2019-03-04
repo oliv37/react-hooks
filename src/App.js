@@ -7,6 +7,7 @@ import {createMuiTheme} from "@material-ui/core";
 import blue from '@material-ui/core/colors/blue';
 import orange from '@material-ui/core/colors/orange';
 import red from '@material-ui/core/colors/red';
+import { ToastContainer } from 'react-toastify';
 import TwoColumnsTabContainer from "./TwoColumnsTabContainer";
 import TabContainer from "./TabContainer";
 import WithUseStateExample from "./useState/WithUseStateExample";
@@ -14,9 +15,10 @@ import WithoutUseStateExample from './useState/WithoutUseStateExample';
 import WithoutUseEffectExample from './useEffect/WithoutUseEffectExample';
 import WithUseEffectExample from './useEffect/WithUseEffectExample';
 import WithCustomHooksExample from './customHooks/WithCustomHooksExample';
-import './App.css';
 import WithoutUseEffect2Example from './useEffectUser/withClass/WithoutUseEffect2Example';
 import WithUseEffect2Example from './useEffectUser/withHooks/WithUseEffect2Example';
+import './App.css';
+import 'react-toastify/dist/ReactToastify.css';
 
 const theme = createMuiTheme({
   palette: {
@@ -68,6 +70,7 @@ function App() {
           </TabContainer>
         )}
       </div>
+      <ToastContainer/>
     </MuiThemeProvider>
   );
 }

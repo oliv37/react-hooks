@@ -8,8 +8,8 @@ class WithoutUseStateExample extends React.Component{
         super(props);
 
         this.state = {
-            counter: 0,
-            name: ''
+            name: '',
+            counter: 0
         };
     }
 

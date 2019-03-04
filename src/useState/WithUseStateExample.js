@@ -3,12 +3,15 @@ import Button from '@material-ui/core/Button';
 import TextField from '@material-ui/core/TextField';
 
 function WithUseStateExample() {
+    const name = "";
+    const counter = 0;
+
     return (
         <>
-            <TextField margin="normal"/>
+            <TextField margin="normal" value={name}/>
 
             <Button variant="contained" color="primary">
-                {`Value = 0`}
+                {`Value = ${counter}`}
             </Button>
         </>
     );
