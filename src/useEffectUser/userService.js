@@ -1,4 +1,4 @@
-const TIMEOUT = 500;
+const TIMEOUT = 1000;
 
 export const USERS = [
     {id: 1, name: "Paul", age: 24, city: "Toulouse", job: "Dentiste"},
