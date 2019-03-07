@@ -26,8 +26,6 @@ class UserInfoWithClass extends React.Component {
     }
 
     loadUser = () => {
-        this.request && this.request.cancel();
-
         this.setState({user: undefined});
         this.request = findUserById(this.props.userId);
         this.request.promise
@@ -41,12 +39,13 @@ class UserInfoWithClass extends React.Component {
 
     componentDidUpdate(prevProps) {
         if (prevProps.userId !== this.props.userId) {
+            this.request.cancel();
             this.loadUser();
         }
     }
 
     componentWillUnmount() {
-        this.request && this.request.cancel();
+        this.request.cancel();
     }
 
     render() {
